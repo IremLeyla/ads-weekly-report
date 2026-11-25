@@ -66,7 +66,8 @@ ads-weekly-report/
 │   └── zahlencheck_fehler.log     every failed check with the type of error
 ├── CLAUDE.md                      working rules for Claude Code
 ├── START_PROMPT.md                first prompt given to Claude Code
-├── requirements.txt
+├── requirements.txt             tested package versions
+├── LICENSE                        MIT
 ├── .env.example                   template for .env (API keys)
 └── .env                           your keys (never committed)
 ```
@@ -143,3 +144,7 @@ Switch provider and model in `einstellungen.py` (`LLM_ANBIETER`, `LLM_MODELLE`).
 - Direct connection to the Meta and Shopify APIs
 - Automatic delivery every Monday by email
 - Several shops at once
+
+## License
+
+MIT, see [LICENSE](LICENSE).
