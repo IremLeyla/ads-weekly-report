@@ -59,14 +59,14 @@ ads-weekly-report/
 ├── beispiel/                      three example reports with LLM text (KW 45, 46, 47)
 ├── docs/
 │   ├── screenshot_kw47.png
+│   ├── CLAUDE.md                  working rules given to Claude Code
+│   ├── START_PROMPT.md            first prompt given to Claude Code
 │   └── TESTLOESUNG.md             what happens in the sample data (read after the examples!)
 ├── reports/                       output (not committed)
 │   ├── report_KW…html
 │   ├── laeufe/                    every LLM run as a readable Markdown file
 │   └── zahlencheck_fehler.log     every failed check with the type of error
-├── CLAUDE.md                      working rules for Claude Code
-├── START_PROMPT.md                first prompt given to Claude Code
-├── requirements.txt             tested package versions
+├── requirements.txt               tested package versions
 ├── LICENSE                        MIT
 ├── .env.example                   template for .env (API keys)
 └── .env                           your keys (never committed)
@@ -138,6 +138,10 @@ Switch provider and model in `einstellungen.py` (`LLM_ANBIETER`, `LLM_MODELLE`).
 - Groq (free tier) allows 8,000 tokens per minute. The code therefore waits 60 seconds before the second attempt.
 - Model names change: the originally planned Groq model no longer existed. Check with `python llm_text.py --modelle` before switching.
 - The LLM text varies between runs. As of 18 Nov 2026 with `openai/gpt-oss-120b`: 5 of 6 runs passed on the first attempt, 6 of 6 on the second. With the direction and mandatory checks in their final form (20 Nov 2026), the three example reports each passed on the second attempt. Earlier runs that day fell back to the fallback text twice because of false alarms in the direction check; the word list was extended afterwards. This is a small sample.
+
+## How this was built
+
+This is a learning project, built step by step with Claude Code. The working rules it had to follow (for example: only checked numbers, „unklar“ instead of guessing, never pick Meta or Shopify as "the correct" number) are in [docs/CLAUDE.md](docs/CLAUDE.md). The first prompt is in [docs/START_PROMPT.md](docs/START_PROMPT.md). Both are kept unchanged as a record of how the project started.
 
 ## Later
 
